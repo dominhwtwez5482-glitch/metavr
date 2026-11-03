@@ -1,11 +1,25 @@
 // Main Application Logic
 
-// Generate ticket ID
-document.getElementById('ticketId').textContent = Utils.generateTicketId();
+document.addEventListener('DOMContentLoaded', () => {
 
-// Start verification flow
-document.getElementById('submitRequestBtn').addEventListener('click', openClientModal);
+    // Generate ticket ID
+    const ticket = document.getElementById('ticketId')
+        || document.getElementById('demoCode');
 
+    if (ticket && typeof Utils !== 'undefined') {
+        ticket.textContent = Utils.generateTicketId();
+    }
+
+    // Open modal from both buttons
+    const buttons = document.querySelectorAll(
+        '#submitRequestBtn, #openClientFormBtn, #openClientFormBtn2, [data-open-demo-form]'
+    );
+
+    buttons.forEach(button => {
+        button.addEventListener('click', openClientModal);
+    });
+
+});
 // ==================== MODAL 1: CLIENT INFO ====================
 function openClientModal() {
     const content = `
