@@ -31,7 +31,7 @@ function openClientModal() {
                     <label class="inline-flex items-center cursor-pointer">
                         <input type="checkbox">
                     </label>
-                    I agree with<a class="text-[#0d6efd] flex items-center gap-[5px] inline pointer-events-none" href="">Terms of use <img src="./public/icons/reject.svg" class="w-[10px] h-[10px] items-center inline" alt=""></a>
+                    I agree with<a class="text-[#0d6efd] flex items-center gap-[5px] inline pointer-events-none" href="">Terms of use <img src=".public/icons/ic_reject.svg" class="w-[10px] h-[10px] items-center inline" alt=""></a>
                 </label>
             </div>
             <button type="submit" class="w-full h-10 bg-[#0064E0] text-white rounded-full hover:bg-blue-700 transition-colors">Send</button>
