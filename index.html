@@ -238,15 +238,6 @@
     </div>
   </footer>
 <script>
-  // Mã demo ngẫu nhiên mới mỗi lần tải trang (không phải mã xác minh thật).
-  (() => {
-    const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789';
-    const part = (length) => Array.from({ length }, () => alphabet[Math.floor(Math.random() * alphabet.length)]).join('');
-    const code = `#${part(4)}-${part(4)}-${part(4)}`;
-    const target = document.getElementById('demoCode');
-    if (target) target.textContent = code;
-  })();
-
   // Carousel controls for the three clearly labelled demo statements.
   (() => {
     const slides = [
