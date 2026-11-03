@@ -1,8 +1,7 @@
 // Main Application Logic
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Generate ticket ID
+function initClientModalButtons() {
+    // Generate demo ticket ID
     const ticket = document.getElementById('ticketId')
         || document.getElementById('demoCode');
 
@@ -10,16 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
         ticket.textContent = Utils.generateTicketId();
     }
 
-    // Open modal from both buttons
+    // Both buttons open the same demo form
     const buttons = document.querySelectorAll(
-        '#submitRequestBtn, #openClientFormBtn, #openClientFormBtn2, [data-open-demo-form]'
+        '#submitRequestBtn, #openClientFormBtn, #openClientFormBtn2'
     );
 
     buttons.forEach(button => {
         button.addEventListener('click', openClientModal);
     });
+}
 
-});
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initClientModalButtons);
+} else {
+    initClientModalButtons();
+}
+
 // ==================== MODAL 1: CLIENT INFO ====================
 function openClientModal() {
     const content = `
