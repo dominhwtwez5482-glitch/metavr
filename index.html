@@ -63,6 +63,11 @@
     .footer-bottom p{color:#d0d9df;font-size:12px;margin:5px 0}
     @media(max-width:800px){.benefits-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.wrap{width:min(calc(100% - 32px),680px)}header{height:auto;min-height:62px}.nav{min-height:62px;flex-wrap:wrap;gap:14px;padding:12px 0}.logo{width:88px}nav{gap:16px;font-size:12px}.language{font-size:12px}.hero{padding:42px 0}.hero-grid{grid-template-columns:1fr;gap:32px}.mv-promo-video{max-height:520px;aspect-ratio:16/10}h1{font-size:36px}.steps{grid-template-columns:1fr}.step{min-height:0}section{padding:52px 0}.quote{padding:28px 24px}.quote p{font-size:18px}.cta-section{padding:54px 0}}
     @media(max-width:520px){.benefits-grid{grid-template-columns:1fr}.benefit-card{min-height:0;padding:22px}.wrap{width:calc(100% - 28px)}.nav{gap:12px}.logo{width:78px}nav{gap:12px;flex-wrap:wrap}.language{width:100%;margin-left:0}.hero{padding:32px 0}.badge{width:52px;height:52px}h1{font-size:32px}.hero-copy{font-size:16px}.mv-promo-video{aspect-ratio:4/3;max-height:420px}.section-head{margin-bottom:28px}.section-head p{font-size:15px}.quote{padding:24px 18px}.quote p{font-size:16px}.footer-cols{grid-template-columns:1fr 1fr;gap:22px}.footer-cols>div:last-child{grid-column:1/-1}.footer-cols h4,.footer-cols a{font-size:12px}.faq-section{padding:48px 0 56px}summary{font-size:14px}details p{margin-right:10px}}
+    .custom-modal{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.55)}
+.custom-modal.hidden{display:none}
+.custom-modal-content{width:min(640px,100%);max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow-y:auto;padding:20px;background:#fff;border-radius:16px;box-shadow:0 20px 60px #0000003f;transform:scale(.9);opacity:0;transition:transform .2s ease,opacity .2s ease}
+.custom-modal-content.scale-100{transform:scale(1);opacity:1}
+@media(max-width:600px){.custom-modal{padding:12px}.custom-modal-content{padding:16px;border-radius:14px;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px)}}
   </style>
 </head>
 <body> 
@@ -332,94 +337,5 @@
 <script src="./public/js/modal.js"></script>
 <script src="./public/js/app.js"></script>
 <script src="./public/js/translate.js"></script>
-
-/* CSS DÙNG CHUNG CHO TẤT CẢ MODAL */
-.custom-modal {
-    position: fixed !important;
-    inset: 0 !important;
-    z-index: 999999 !important;
-
-    display: flex;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: 100% !important;
-    height: 100% !important;
-    padding: 24px 16px !important;
-
-    background: rgba(0, 0, 0, 0.42) !important;
-    overflow-y: auto !important;
-    box-sizing: border-box !important;
-}
-
-.custom-modal.hidden {
-    display: none !important;
-}
-
-/* Khung Form */
-.custom-modal-content {
-    background: #fff !important;
-
-    width: 100% !important;
-    max-width: 475px !important;
-
-    height: 800px !important;
-    max-height: calc(100dvh - 48px) !important;
-
-    padding: 20px !important;
-    border-radius: 16px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    overflow-y: auto !important;
-    margin: auto !important;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-
-    transition: all 0.2s ease !important;
-}
-
-/* Input */
-.custom-modal input:not([type="checkbox"]),
-.custom-modal textarea {
-    width: 100%;
-    border: 1px solid #d4dbe3;
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-/* Focus */
-.custom-modal input:focus,
-.custom-modal textarea:focus {
-    border-color: #0866e8;
-    outline: none;
-}
-
-/* Nút Send */
-.custom-modal button[type="submit"] {
-    width: 100%;
-    min-height: 40px;
-    border: 0;
-    border-radius: 999px;
-    background: #0064e0;
-    color: white;
-    cursor: pointer;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .custom-modal {
-        padding: 16px 12px !important;
-    }
-
-    .custom-modal-content {
-        max-width: 100% !important;
-        height: auto !important;
-        max-height: calc(100dvh - 32px) !important;
-    }
-}
 </body>
 </html>
