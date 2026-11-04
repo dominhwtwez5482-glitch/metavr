@@ -173,3 +173,31 @@
   font-size:.95rem;
   font-weight:600;
   color:#334155;
+/* Ô Day/Month/Year: có style đẹp nhưng không ép chiều rộng cố định */
+.custom-modal-content input[type="number"]{
+  width:100%;
+  box-sizing:border-box;
+  padding:13px 14px;
+  font-size:.95rem;
+  color:#0f172a;
+  background:#fff;
+  border:1.5px solid #e2e8f0;
+  border-radius:12px;
+  outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+.custom-modal-content input[type="number"]::placeholder{
+  color:#94a3b8;
+}
+.custom-modal-content input[type="number"]:focus{
+  border-color:#3b82f6;
+  box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}
+
+/* Hàng chứa Day/Month/Year: tự chia đều 3 cột */
+.custom-modal-content > div:has(> input[type="number"]){
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:12px;
+}
