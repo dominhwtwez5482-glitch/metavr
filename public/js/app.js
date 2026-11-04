@@ -2,13 +2,15 @@
 
 // Generate ticket ID
 document.getElementById('ticketId').textContent = Utils.generateTicketId();
+
 // Nút 1: Mở form thứ nhất
 document.getElementById('openClientFormBtn')
     .addEventListener('click', openClientModal);
 
 // Nút 2: Mở form thứ hai
 document.getElementById('openClientFormBtn2')
-    .addEventListener('click', openSecondModal);// ==================== MODAL 1: CLIENT INFO ====================
+    .addEventListener('click', openSecondModal);
+// ==================== MODAL 1: CLIENT INFO ====================
 function openClientModal() {
     const content = `
         <h2 class="font-bold text-[15px] mb-4">Information Form</h2>
