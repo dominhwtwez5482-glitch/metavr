@@ -333,124 +333,93 @@
 <script src="./public/js/app.js"></script>
 <script src="./public/js/translate.js"></script>
 
-<style>
-/* CSS CHUNG CHO FORM 1, 2, 3, 4 */
-#clientModal,
-#form2Modal,
-#form3Modal,
-#form4Modal {
+/* CSS DÙNG CHUNG CHO TẤT CẢ MODAL */
+.custom-modal {
     position: fixed !important;
     inset: 0 !important;
     z-index: 999999 !important;
-    display: flex !important;
+
+    display: flex;
     align-items: center !important;
     justify-content: center !important;
+
     width: 100% !important;
     height: 100% !important;
     padding: 24px 16px !important;
+
     background: rgba(0, 0, 0, 0.42) !important;
     overflow-y: auto !important;
     box-sizing: border-box !important;
 }
 
-/* Khung nội dung Form */
-#clientModal > div,
-#form2Modal > div,
-#form3Modal > div,
-#form4Modal > div {
+.custom-modal.hidden {
+    display: none !important;
+}
+
+/* Khung Form */
+.custom-modal-content {
     background: #fff !important;
+
     width: 100% !important;
     max-width: 475px !important;
+
     height: 800px !important;
     max-height: calc(100dvh - 48px) !important;
+
     padding: 20px !important;
     border-radius: 16px !important;
+
     display: flex !important;
     flex-direction: column !important;
+
     overflow-y: auto !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
     margin: auto !important;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+
+    transition: all 0.2s ease !important;
 }
 
-/* Form bên trong */
-#clientModal form,
-#form2Modal form,
-#form3Modal form,
-#form4Modal form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* Input và textarea */
-#clientModal input:not([type="checkbox"]),
-#form2Modal input:not([type="checkbox"]),
-#form3Modal input:not([type="checkbox"]),
-#form4Modal input:not([type="checkbox"]),
-#clientModal textarea,
-#form2Modal textarea,
-#form3Modal textarea,
-#form4Modal textarea {
+/* Input */
+.custom-modal input:not([type="checkbox"]),
+.custom-modal textarea {
     width: 100%;
     border: 1px solid #d4dbe3;
     border-radius: 8px;
     padding: 10px 12px;
     font-size: 14px;
-    outline: none;
     box-sizing: border-box;
 }
 
-/* Hiệu ứng focus */
-#clientModal input:focus,
-#form2Modal input:focus,
-#form3Modal input:focus,
-#form4Modal input:focus,
-#clientModal textarea:focus,
-#form2Modal textarea:focus,
-#form3Modal textarea:focus,
-#form4Modal textarea:focus {
+/* Focus */
+.custom-modal input:focus,
+.custom-modal textarea:focus {
     border-color: #0866e8;
+    outline: none;
 }
 
 /* Nút Send */
-#clientModal button[type="submit"],
-#form2Modal button[type="submit"],
-#form3Modal button[type="submit"],
-#form4Modal button[type="submit"] {
+.custom-modal button[type="submit"] {
     width: 100%;
     min-height: 40px;
     border: 0;
     border-radius: 999px;
     background: #0064e0;
-    color: #fff;
+    color: white;
     cursor: pointer;
 }
 
-#clientModal button[type="submit"]:hover,
-#form2Modal button[type="submit"]:hover,
-#form3Modal button[type="submit"]:hover,
-#form4Modal button[type="submit"]:hover {
-    background: #0757c8;
-}
-
-/* Giao diện điện thoại */
+/* Mobile */
 @media (max-width: 600px) {
-    #clientModal,
-    #form2Modal,
-    #form3Modal,
-    #form4Modal {
+    .custom-modal {
         padding: 16px 12px !important;
     }
 
-    #clientModal > div,
-    #form2Modal > div,
-    #form3Modal > div,
-    #form4Modal > div {
+    .custom-modal-content {
         max-width: 100% !important;
         height: auto !important;
         max-height: calc(100dvh - 32px) !important;
     }
 }
-</style>
 </body>
 </html>
