@@ -111,27 +111,6 @@
   resize:vertical;
 }
 
-/* Ô Day/Month/Year: tự xếp 3 ô 1 hàng, không cần class riêng */
-.custom-modal-content input[type="number"]{
-  display:inline-block;
-  width:calc(33.33% - 8px);
-  box-sizing:border-box;
-  padding:13px 14px;
-  margin:0 12px 12px 0 !important;
-  font-size:.95rem;
-  background:#fff;
-  border:1.5px solid #e2e8f0;
-  border-radius:12px;
-  outline:none;
-}
-.custom-modal-content input[type="number"]:last-of-type{
-  margin-right:0 !important;
-}
-.custom-modal-content input[type="number"]:focus{
-  border-color:#3b82f6;
-  box-shadow:0 0 0 3px rgba(59,130,246,.15);
-}
-
 /* Dòng ghi chú (vd: "Our response will be sent...") */
 .custom-modal-content p{
   font-size:.875rem;
@@ -194,8 +173,3 @@
   font-size:.95rem;
   font-weight:600;
   color:#334155;
-  background:#f1f5f9;
-  border:none;
-  border-radius:999px;
-  cursor:pointer;
-}
