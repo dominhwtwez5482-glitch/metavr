@@ -63,11 +63,137 @@
     .footer-bottom p{color:#d0d9df;font-size:12px;margin:5px 0}
     @media(max-width:800px){.benefits-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.wrap{width:min(calc(100% - 32px),680px)}header{height:auto;min-height:62px}.nav{min-height:62px;flex-wrap:wrap;gap:14px;padding:12px 0}.logo{width:88px}nav{gap:16px;font-size:12px}.language{font-size:12px}.hero{padding:42px 0}.hero-grid{grid-template-columns:1fr;gap:32px}.mv-promo-video{max-height:520px;aspect-ratio:16/10}h1{font-size:36px}.steps{grid-template-columns:1fr}.step{min-height:0}section{padding:52px 0}.quote{padding:28px 24px}.quote p{font-size:18px}.cta-section{padding:54px 0}}
     @media(max-width:520px){.benefits-grid{grid-template-columns:1fr}.benefit-card{min-height:0;padding:22px}.wrap{width:calc(100% - 28px)}.nav{gap:12px}.logo{width:78px}nav{gap:12px;flex-wrap:wrap}.language{width:100%;margin-left:0}.hero{padding:32px 0}.badge{width:52px;height:52px}h1{font-size:32px}.hero-copy{font-size:16px}.mv-promo-video{aspect-ratio:4/3;max-height:420px}.section-head{margin-bottom:28px}.section-head p{font-size:15px}.quote{padding:24px 18px}.quote p{font-size:16px}.footer-cols{grid-template-columns:1fr 1fr;gap:22px}.footer-cols>div:last-child{grid-column:1/-1}.footer-cols h4,.footer-cols a{font-size:12px}.faq-section{padding:48px 0 56px}summary{font-size:14px}details p{margin-right:10px}}
-    .custom-modal{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.55)}
+    /* ===== Lớp phủ, căn giữa ===== */
+.custom-modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(15,23,42,.55);
+  backdrop-filter:blur(4px);
+  z-index:1000;
+}
 .custom-modal.hidden{display:none}
-.custom-modal-content{width:min(640px,100%);max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow-y:auto;padding:20px;background:#fff;border-radius:16px;box-shadow:0 20px 60px #0000003f;transform:scale(.9);opacity:0;transition:transform .2s ease,opacity .2s ease}
-.custom-modal-content.scale-100{transform:scale(1);opacity:1}
-@media(max-width:600px){.custom-modal{padding:12px}.custom-modal-content{padding:16px;border-radius:14px;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px)}}
+
+/* ===== Hộp form ===== */
+.custom-modal-content{
+  width:min(560px,100%);
+  max-height:calc(100dvh - 40px);
+  overflow-y:auto;
+  padding:28px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 25px 70px rgba(15,23,42,.35);
+  transform:translateY(12px) scale(.96);
+  opacity:0;
+  transition:transform .25s ease,opacity .25s ease;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:#0f172a;
+}
+.custom-modal-content.scale-100{
+  transform:translateY(0) scale(1);
+  opacity:1;
+}
+
+/* ===== Tiêu đề ===== */
+.custom-modal-content h1,
+.custom-modal-content h2,
+.custom-modal-content h3{
+  margin:0 0 6px;
+  font-size:1.4rem;
+  font-weight:700;
+  line-height:1.3;
+}
+.custom-modal-content p{
+  margin:0 0 18px;
+  color:#64748b;
+  font-size:.95rem;
+}
+
+/* ===== Nhãn và ô nhập ===== */
+.custom-modal-content label{
+  display:block;
+  margin:16px 0 6px;
+  font-size:.875rem;
+  font-weight:600;
+  color:#334155;
+}
+.custom-modal-content input:not([type="checkbox"]):not([type="radio"]),
+.custom-modal-content select,
+.custom-modal-content textarea{
+  width:100%;
+  box-sizing:border-box;
+  padding:12px 14px;
+  font:inherit;
+  color:#0f172a;
+  background:#f8fafc;
+  border:1.5px solid #e2e8f0;
+  border-radius:12px;
+  outline:none;
+  transition:border-color .15s,box-shadow .15s,background .15s;
+}
+.custom-modal-content textarea{
+  min-height:100px;
+  resize:vertical;
+}
+.custom-modal-content input::placeholder,
+.custom-modal-content textarea::placeholder{color:#94a3b8}
+
+.custom-modal-content input:focus,
+.custom-modal-content select:focus,
+.custom-modal-content textarea:focus{
+  background:#fff;
+  border-color:#3b82f6;
+  box-shadow:0 0 0 4px rgba(59,130,246,.15);
+}
+
+/* Checkbox / radio */
+.custom-modal-content input[type="checkbox"],
+.custom-modal-content input[type="radio"]{
+  width:18px;
+  height:18px;
+  accent-color:#3b82f6;
+  vertical-align:middle;
+}
+
+/* ===== Nút bấm ===== */
+.custom-modal-content button{
+  font:inherit;
+  font-weight:600;
+  padding:12px 20px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  background:#e2e8f0;
+  color:#334155;
+  transition:background .15s,transform .1s,box-shadow .15s;
+}
+.custom-modal-content button:hover{background:#cbd5e1}
+.custom-modal-content button:active{transform:scale(.97)}
+
+/* Nút chính: submit hoặc class .btn-primary */
+.custom-modal-content button[type="submit"],
+.custom-modal-content .btn-primary{
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(37,99,235,.35);
+}
+.custom-modal-content button[type="submit"]:hover,
+.custom-modal-content .btn-primary:hover{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+/* ===== Mobile ===== */
+@media(max-width:600px){
+  .custom-modal{padding:12px}
+  .custom-modal-content{
+    padding:20px;
+    border-radius:16px;
+    max-height:calc(100dvh - 24px);
+  }
+}
   </style>
 </head>
 <body> 
