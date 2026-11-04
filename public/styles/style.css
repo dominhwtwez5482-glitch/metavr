@@ -1,3 +1,65 @@
+/* MODAL DÙNG CHUNG */
+.custom-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.55);
+    box-sizing: border-box;
+}
+
+.custom-modal.hidden {
+    display: none !important;
+}
+
+.custom-modal-content {
+    width: 100%;
+    max-width: 475px;
+
+    height: auto;
+    max-height: calc(100dvh - 40px);
+
+    overflow-y: auto;
+    padding: 20px;
+
+    background: #fff;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+
+    transform: scale(.9);
+    opacity: 0;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.custom-modal-content.scale-100 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .custom-modal {
+        padding: 12px;
+    }
+
+    .custom-modal-content {
+        max-width: 100%;
+        max-height: calc(100dvh - 24px);
+        padding: 16px;
+        border-radius: 14px;
+    }
+}
 /* ============ ÁP DỤNG CHUNG CHO MỌI FORM TRONG MODAL ============ */
 
 .custom-modal-content h1,
